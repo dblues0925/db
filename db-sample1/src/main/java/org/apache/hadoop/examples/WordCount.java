@@ -114,14 +114,14 @@ public class WordCount {
 
   public static void main(String[] args) throws Exception {
     Configuration conf = new Configuration();
-    File jarFile = createTempJar("target\\classes");
+    //File jarFile = createTempJar("target\\classes");
     String[] otherArgs = new GenericOptionsParser(conf, args).getRemainingArgs();
     if (otherArgs.length < 2) {
       System.err.println("Usage: wordcount <in> [<in>...] <out>");
       System.exit(2);
     }
     Job job = Job.getInstance(conf, "word count");
-    job.setJar(jarFile.toString());
+    //job.setJar(jarFile.toString());
     job.setJarByClass(WordCount.class);
     job.setMapperClass(TokenizerMapper.class);
     job.setCombinerClass(IntSumReducer.class);
@@ -135,6 +135,6 @@ public class WordCount {
       new Path(otherArgs[otherArgs.length - 1]));
     System.exit(job.waitForCompletion(true) ? 0 : 1);
     
-    //hadoop fs -ls hdfs://192.168.186.132:9000/user/liuqz/wordcount/output0515
+    //hadoop fs -ls hdfs://192.168.186.132:9000/user/dblues/wordcount/output0515
   }
 }

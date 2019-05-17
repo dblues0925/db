@@ -47,12 +47,6 @@ public class WordCount {
 		String input = "hdfs://192.168.186.132:9000/user/dblues/wordcount/input";
 		String output = "hdfs://192.168.186.132:9000/user/dblues/wordcount/apioutput";
 		Configuration conf = new Configuration();
-		conf.addResource("classpath:/hadoop/core-site.xml");
-		conf.addResource("classpath:/hadoop/hdfs-site.xml");
-		conf.addResource("classpath:/hadoop/mapred-site.xml");
-		//conf.set("fs.defaultFS", "hdfs://192.168.186.132:9000");
-		//conf.set("fs.hdfs.impl", "org.apache.hadoop.hdfs.DistributedFileSystem");
-		//conf.set("mapreduce.app-submission.cross-platform", "true");
 		Job job = Job.getInstance(conf, "word count");
 		job.setJarByClass(WordCount.class);
 		job.setMapperClass(TokenizerMapper.class);
