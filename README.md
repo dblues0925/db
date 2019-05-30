@@ -1,16 +1,18 @@
 ## db
-hadoop 开发
+hadoop development
 
-## 基础环境
-eclipse插件下载
+## base environment
+eclipse plugin download 
 https://github.com/winghc/hadoop2x-eclipse-plugin
 
-windows下winutils工具
+Tools winutils 
 https://github.com/4ttty/winutils
 
-开发参考
+dev reference resource 
 https://blog.csdn.net/ping802363/article/details/78213292
 
-## 示例程序
+## Demo 
 ### db-sample1
-   window下hadoop mr wordcount开发# db
+   Use hadoop mr to count word. 
+### db-recommend-mahout
+   Use hadoop mr and mahout to implement recommend such as job,movie.
