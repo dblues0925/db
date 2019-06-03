@@ -1,6 +1,8 @@
 package com.ucap.hadoop.utils;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.net.URI;
 
 import org.apache.hadoop.conf.Configuration;
@@ -117,6 +119,27 @@ public class HdfsDAO {
             IOUtils.closeStream(fsdis);
             fs.close();
           }
+    }
+    
+    public String catBackContent(String remoteFile) throws IOException {
+    	 Path path = new Path(remoteFile);
+         FileSystem fs = FileSystem.get(URI.create(hdfsPath), conf);
+         FSDataInputStream fsdis = null;
+         System.out.println("cat: " + remoteFile);
+         
+         OutputStream baos = new ByteArrayOutputStream(); 
+         String str = null;
+         
+         try {
+             fsdis = fs.open(path);
+             IOUtils.copyBytes(fsdis, baos, 4096, false);
+             str = baos.toString();  
+         } finally {
+             IOUtils.closeStream(fsdis);
+             fs.close();
+         }
+         System.out.println(str);
+         return str;
     }
 
     public void location() throws IOException {
