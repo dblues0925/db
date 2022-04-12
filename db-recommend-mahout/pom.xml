@@ -10,7 +10,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<hadoop.version>2.7.2</hadoop.version>
+		<hadoop.version>3.2.3</hadoop.version>
 		<!-- mahout0.8 publish at 2013-07-24 -->
 		<mahout.version>0.8</mahout.version>
 		<!-- mahout0.9 publish at 2014-02-16  -->
